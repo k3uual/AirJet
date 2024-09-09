@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            hello
+        </title>
+        <link rel="stylesheet" type="text/css" href="sidebaradmin.css">
+        <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <style>
+            *{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                
+            }
+            .main{
+                top:20px;
+            }
+            input[type="radio"]{
+                width: 10px;
+                position: relative;
+                size: 10px;
+                transform: scale(1.5);
+                top: 35%;
+                left:-30px;
+            }
+            .section{
+                position: relative;
+                top:15px;
+                height: 480px;
+                overflow: auto;
+                border: 1px solid black;
+                border-radius: 10px;
+                width: fit-content;
+                min-height: 300px;
+            }
+            label{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 50px;
+                padding-right: 50px;
+                /* border: 2px solid ; */
+                background-color:  #393646;
+                width: fit-content;
+                display: grid;
+                /* grid-template-columns: auto auto; */
+                grid-template-columns: 0.1fr 1fr;
+                margin: 10px;
+            }
+            label:hover{
+                border: 1px solid greenyellow;
+            }
+            label:has(.radio>.radiobtn:checked){
+                background-color: black;
+            }
+            .inside{
+                
+                width:fit-content;
+                color: #fff;
+                display: grid;
+                grid-template-columns: 15em 1fr 15em 1fr;
+                /* font-size: 20px; */
+                position: relative;
+                right: -30px;
+                
+            }
+            .time{
+                font-size: 40px;
+            }
+            .fa-long-arrow-right{
+                position: relative;
+                bottom: 10px;
+                font-size:50px;
+            }
+            .way{
+                position: relative;
+                bottom: -10px;
+                font-size: 12px;
+            }
+            .class{
+                position: relative;
+                top:20px;
+                right: 30px;
+            }
+            .datesection{
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+                border-bottom: 2px solid rgb(163, 163, 163);
+                overflow:auto;
+                position: relative;
+                top: 0px;
+                width: fit-content;
+                max-width: 80%;
+                padding-top: 20px;
+                padding-bottom:15px ;
+                bottom: 0;
+            }
+            .selectdate{
+                
+                width: fit-content;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                margin: 0 10px 0 10px;
+                background-color: #393646;
+                cursor: pointer;
+                transition: all 0.5s;
+                
+            }
+            .selectdate:hover{
+                transform: translate(0px,-10px);
+                scale: 1;
+                border: 1px solid greenyellow;
+                background-color: rgb(49, 49, 49);
+            }
+            .date{
+                font-size: 22px;
+            }
+            #selected{
+                cursor: default;
+                background-color: black;
+                border: 1px solid plum;
+            }
+            #selected:hover{
+                
+                transform: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        
+            <div class="main">
+                <div class="content">
+                    <center>
+                    <div class="datesection">
+                        <div class="selectdate" id="selected">
+                            <div class="date">16/04</div>
+                            <div class="day">mon</div>
+                        </div>
+                        <div class="selectdate">
+                            <div class="date">16/04</div>
+                            <div class="day">mon</div>
+                        </div>
+                    </div>
+                    </center>
+                    <form action="" method="post">
+                        <center>
+                        <div class="section">
+                        <label for="a">
+                            <div class="radio">
+                                <input class="radiobtn" type="radio" name="sel" id="a">
+                            </div>
+                            <div class="inside">
+                                <div class="fromsec">
+                                    <div class="fromtime time">06:00</div>
+                                    <div class="fromtext">mumbai</div>
+                                </div>
+                                <div class="middle">
+                                <div class="way">Direct</div>
+                                <div><i class="fa fa-long-arrow-right"></i></div>
+                                </div>
+                                <div class="tosec">
+                                    <div class="totime time">06:00</div>
+                                    <div class="totext">delhi</div>
+                                </div>
+                                <div class="class">
+                                    <div>Bussiness Class</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label for="a1">
+                            <div class="radio">
+                            <input type="radio" name="sel" id="a1">
+                            </div>
+                            <div class="inside">
+                                <div class="fromsec">
+                                    <div class="fromtime time">06:00</div>
+                                    <div class="fromtext">mumbai</div>
+                                </div>
+                                <div class="tosec">
+                                    <div class="totime time">06:00</div>
+                                    <div class="totext">delhi</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label for="a2">
+                            <div class="radio">
+                            <input type="radio" name="sel" id="a2">
+                            </div>
+                            <div class="inside">
+                                <div class="fromsec">
+                                    <div class="fromtime time">06:00</div>
+                                    <div class="fromtext">mumbai</div>
+                                </div>
+                                <div class="tosec">
+                                    <div class="totime time">06:00</div>
+                                    <div class="totext">delhi</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label for="a3">
+                            <div class="radio">
+                            <input type="radio" name="sel" id="a3">
+                            </div>
+                            <div class="inside">
+                                <div class="fromsec">
+                                    <div class="fromtime time">06:00</div>
+                                    <div class="fromtext">mumbai</div>
+                                </div>
+                                <div class="tosec">
+                                    <div class="totime time">06:00</div>
+                                    <div class="totext">delhi</div>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label for="a4">
+                            <div class="radio">
+                            <input type="radio" name="sel" id="a4">
+                            </div>
+                            <div class="inside">
+                                <div class="fromsec">
+                                    <div class="fromtime time">06:00</div>
+                                    <div class="fromtext">mumbai</div>
+                                </div>
+                                <div class="tosec">
+                                    <div class="totime time">06:00</div>
+                                    <div class="totext">delhi</div>
+                                </div>
+                            </div>
+                        </label>
+                        <label for="a">
+                            <div class="radio">
+                                <input type="radio" name="sel" id="a">
+                            </div>
+                            <div class="inside">
+                                <div class="fromsec">
+                                    <div class="fromtime time">06:00</div>
+                                    <div class="fromtext">mumbai</div>
+                                </div>
+                                <div class="middle">
+                                <div class="way">Direct</div>
+                                <div><i class="fa fa-long-arrow-right"></i></div>
+                                </div>
+                                <div class="tosec">
+                                    <div class="totime time">06:00</div>
+                                    <div class="totext">delhi</div>
+                                </div>
+                                <div class="class">
+                                    <div>Bussiness Class</div>
+                                </div>
+                            </div>
+                        </label>
+                        </div>
+                        </center>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="sidebar">
+                <i id="expandButton" class="fa fa-bars fa-lg"></i>
+                
+                <ul >
+                    <li class="nav-item" onclick="window.location.href=''"><i class="fa fa-calendar-o fa-lg" href="#"><span class="remove" href="#">  Set Schedule</span> </i></li>
+                    <li class="nav-item" onclick="window.location.href=''"><i class="fa fa-user fa-lg"><a class="remove" href="#">  Manage Customers</a> </i></li>
+                    <li class="nav-item" onclick="window.location.href=''"><i class="fa fa-group fa-lg"><a class="remove" href="#"> Manage Employees</a> </i></li>
+                    <li class="nav-item" onclick="window.location.href='main.php'"><i class="fa fa-plane fa-lg"><a class="remove" href="#"> Manage Flights</a> </i></li>
+                    <li class="nav-item" onclick="window.location.href=''"><i class="fa fa-search fa-lg"><a class="remove" href="#"> Manage Others</a> </i></li>
+                    <li class="nav-item" onclick="window.location.href=''"><i class="fa fa-power-off fa-lg"><a class="remove" href="#">  Logout</a> </i></li>
+                    
+                    
+                </ul>
+                
+            </div>
+        </div>
+        
+        
+        <script>
+            var expandButton = document.getElementById("expandButton");
+            var sidebar = document.querySelector(".sidebar");
+            var main = document.querySelector(".main");
+            expandButton.addEventListener("click", function() {
+                sidebar.classList.toggle("expand");
+                main.classList.toggle("resize");
+            });
+            // sidebar.addEventListener("mouseenter",function(){
+            //     sidebar.classList.add("expand");
+            // }),
+            // sidebar.addEventListener("mouseleave",function(){
+            //     sidebar.classList.remove("expand");
+            // });
+    
+        </script>
+    </body>
+</html>

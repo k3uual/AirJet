@@ -1,0 +1,110 @@
+
+table{
+    width:fit-content;
+    table-layout: fixed;
+    position: relative;
+    
+  }
+  .data{
+    border:2px solid black;
+  }
+    .tbl-header{
+        border-radius: 10px 10px 0 0;
+        background-color: rgba(167, 159, 238, 0.815);
+        /* border: 1px solid yellowgreen; */
+   } 
+  .tbl-content{
+    border-radius: 0 0 10px 10px;
+    height:300px;
+    /* overflow:scroll; */
+    position: relative;
+    margin-top: 0px;
+    /* border: 1px solid yellowgreen; */
+  } 
+  /* .tbl-header{
+    
+  } */
+  th{
+    /* overflow: hidden; */
+    /* overflow: scroll; */
+    padding: 20px 15px;
+    text-align: left;
+    /* font-weight: 500; */
+    font-size: 16px;
+    color: #e1e2ef;
+    text-transform: uppercase;
+  }
+  tr{
+    /* outline:red solid 1px;  */
+  }
+  td{
+    outline: red solid 2px;
+    /* overflow:hidden; */
+    padding: 15px;
+    text-align: left;
+    vertical-align:middle;
+    /* font-weight: 300; */
+    font-size: 14.5px;
+    /* color: #e0e2e7; */
+    color: #e1e2ef;
+    /* border-bottom: solid 1px rgba(255,255,255,0.1); */
+    /* border-bottom: 1px solid green; */
+  }
+  
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+/* table tr td:not(:first-child), table tr th:not(:first-child), table tr td:not(.total-val) {
+    display: none;
+  } */
+  /* table tr:nth-of-type(even) td:first-child {
+    background-color: #d9f4f2;
+  }
+  table tr:nth-of-type(odd) td:first-child {
+    background-color: white;
+  }
+  table tr:nth-of-type(even) td:not(:first-child) {
+    background-color: white;
+  }   */
+  tr:nth-child(even){
+    background-color: rgba(220, 117, 225, 0.496);
+  }
+  tr:nth-child(odd){
+    background-color: rgb(255, 255, 255);
+  }
+  @keyframes editanimation {
+    0%{rotate:0deg;}
+    50%{rotate: -25deg;}
+    100%{rotate: 0deg;}
+}
+@keyframes removeanimation {
+    0%{rotate:0deg;}
+    25%{rotate: -25deg;}
+    
+    75%{rotate: 25deg;}
+    100%{rotate: 0deg;}
+}
+  .edit{
+    color: #e1e2ef;
+    transition: all 0.5s;
+  }
+  .remove{
+    color: #e1e2ef;
+    transition: all 0.5s;
+  }
+  .edit>i:hover{
+    animation-name: editanimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  i.fa-trash-o:hover{
+    animation-name: removeanimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }

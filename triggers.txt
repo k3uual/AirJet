@@ -1,0 +1,69 @@
+CREATE TRIGGER bookavail BEFORE INSERT ON ticket
+  FOR EACH ROW
+  
+    UPDATE seatschedule SET avail = 0 WHERE seatschedule.seatno = NEW.seatno AND sid = NEW.scid AND seatschedule.avail =1 ;
+
+
+CREATE TRIGGER cancel BEFORE DELETE ON ticket
+  FOR EACH ROW
+  
+    UPDATE seatschedule SET avail = 1 WHERE seatschedule.seatno = OLD.seatno AND sid = OLD.scid AND seatschedule.avail =0 ;
+
+DELIMITER &&
+CREATE TRIGGER bookavail BEFORE INSERT ON ticket
+  FOR EACH ROW
+    BEGIN
+    UPDATE seatschedule SET avail = 0 WHERE seatschedule.seatno = NEW.seatno AND sid = NEW.scid AND seatschedule.avail =1 ;
+    UPDATE bank SET balance=balance-NEW.cost WHERE cardno=NEW.paymentid;
+    END;
+    &&
+    DELIMITER;
+
+DELIMITER &&
+CREATE TRIGGER cancel BEFORE DELETE ON ticket
+  FOR EACH ROW
+    BEGIN
+    UPDATE seatschedule SET avail = 1 WHERE seatschedule.seatno = OLD.seatno AND sid = OLD.scid AND seatschedule.avail =0 ;
+    UPDATE bank SET balance=balance+OLD.cost WHERE cardno=OLD.paymentid;
+    END;
+    &&
+    DELIMITER;
+
+DELIMITER &&
+CREATE procedure scheduleupdate()
+BEGIN
+  set @min_date:=(select MIN(arr_date) AS MinDate from schedule);
+  set @max_date:=adddate((select MAX(arr_date) from schedule), interval 1 day);
+  UPDATE schedule set arr_date=@max_date,dep_date=@max_date where arr_date=@min_date;
+END &&
+
+DELIMITER &&
+CREATE EVENT dailyupdate
+ON SCHEDULE
+EVERY 1 DAY
+DO
+BEGIN
+  call scheduleupdate();
+END; &&
+
+SELECT seatschedule.seatno,flight.to,flight.from,schedule.sid,schedule.dep_time,schedule.arr_time,flight.fid,seat.classid,fclass.cost,afrom.city AS city1,ato.city AS city2,class.type  
+from schedule
+INNER JOIN seatschedule ON seatschedule.sid = schedule.sid
+INNER JOIN flight ON flight.fid = schedule.fid 
+INNER JOIN fclass ON flight.fid = fclass.fid
+INNER JOIN seat ON seat.classid = fclass.classid
+INNER JOIN class ON class.classid = seat.classid
+INNER JOIN airport AS afrom ON afrom.aid = flight.from
+INNER JOIN airport AS ato ON ato.aid = flight.to 
+where seatschedule.avail=1 AND ato.city='jaipur'  AND schedule.dep_date='2023-05-15' AND afrom.city='srinagar' AND class.type='first class'
+  
+SELECT seatschedule.seatno,flight.to,flight.from,schedule.sid,schedule.dep_time,schedule.arr_time,flight.fid,seat.classid,fclass.cost,afrom.city AS city1,ato.city AS city2,class.type
+from seat
+INNER JOIN seatschedule ON seatschedule.seatno = seat.seatno
+INNER JOIN class On seat.classid = class.classid
+INNER JOIN schedule ON seatschedule.sid = schedule.sid
+INNER JOIN flight ON schedule.fid = flight.fid
+INNER JOIN fclass ON flight.fid = fclass.fid
+INNER JOIN airport AS afrom ON afrom.aid = flight.from
+INNER JOIN airport AS ato ON ato.aid = flight.to
+where seatschedule.avail=1 AND ato.city='jaipur'  AND schedule.dep_date='2023-05-16' AND afrom.city='srinagar' group by seat.seatno

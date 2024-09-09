@@ -1,0 +1,197 @@
+.main{
+    position: absolute;
+    left:90px;
+    width: 93.25cqw ;
+    /* max-width: 1920vh; */
+    height: 97%;
+    
+    border: 2px solid black;
+}
+.content{
+    /* border: 5px solid red; */
+    /* background-image: url(flight1.jpg); */
+    background-color: white;
+    transition: all 0.5s;
+}
+.expand.content{
+    border: 5px solid red;
+}
+body{
+    height: 97.75cqh;
+    width:95%;
+    background-image: linear-gradient(to bottom right, #fccb90 0%, #d57eeb 100%);
+    /* background-image: linear-gradient(to bottom right , #ff9a9e 0%, #fecfef 99%, #fecfef 100%);; */
+    /* background-image: url('https://static.tumblr.com/94eb957a00fd03c0c2f7d26decd71578/u1rhacw/osAmyyh1q/tumblr_static_tumblr_static_gaussian_blur_gradient_desktop_1680x943_wallpaper-393751.jpg'); */
+    /* background-repeat: no-repeat; */
+}
+.container {
+
+height: 100%;
+}
+
+.sidebar {
+position: fixed;
+overflow: hidden;
+float: left;
+border-radius: 15px;
+padding: 10px;
+width: 55px;
+height: 95%;
+background-color: #393646;
+transition: width  0.5s;
+}
+
+.sidebar ul {
+list-style-type: none;
+padding: 2px;
+margin-top: 10px;
+}
+.expand {
+width: 200px;
+}
+
+.sidebar ul li a {
+/* padding: 3px;
+margin: 5px; */
+color: white;
+text-decoration: none;
+transition: color;
+}
+/* ul{
+
+border: 2px solid black;
+} */
+li  {
+height: 35px;
+width: 85%;
+overflow: hidden;
+/* border-bottom: 2px solid black; */
+margin-top: 10px;
+padding: 10px 6px 10px 6px;
+/* margin: 8px 0 8px 0; */
+color: white;
+text-align: center;
+transition: all 0.5s;
+}
+.expand>ul>li {
+border-bottom: 1px solid #292631;
+width: 87%;
+text-align: left;
+translate: 5px;
+margin-top: 12px;
+font-size: 12px;
+padding: 12px 8px 12px 20px;
+
+/* margin: 20px 0 20px 0; */
+}
+/* a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+.sidebar p.logo {
+
+border-radius: 50px;
+margin:2px;
+height: 50px;
+width: 50px;
+background-repeat:no-repeat;
+background-image: url(Logo-symbol3.svg);
+background-size: 40px 60px;
+background-size: 40px 60px;
+background-position-x:  5px ;
+background-position-y: -5px;
+font-size: 10px;
+background-color: white;
+text-align: center;
+transition-duration: 0.5s;
+transition-property: all;
+}
+.expand p.logo {
+translate:20px;
+width:150px;
+height: 70px;
+background-image: url(logo.svg);
+background-size: 100px 100px;
+background-position-x:  24px ;
+background-position-y: -15px;
+font-size: 50px;
+}
+
+#expandButton {
+text-align: center;
+color:white;
+width:30px;
+margin-bottom:10px;
+margin-left: 8px;
+border-radius: 50px;
+cursor: pointer;
+top: 10px;
+right: 20px;
+padding: 10px 5px 10px 5px;
+transition: all 0.5s;
+}
+.expand>#expandButton{
+
+translate: 150px;
+}
+#expandButton:hover{
+    
+box-shadow: -4px 0px   #000;
+transform: translate(5px,0px);
+background-color: #292631;
+border-radius: 50px;
+border: none;
+}
+.expand>#expandButton:hover{
+    box-shadow: 4px 0px   #000;
+    transform: translate(-5px,0px);
+    background-color: #292631;
+    border-radius: 50px;
+}
+/* .fa-lg {
+font-size: 1em;
+
+} */
+i{
+
+padding-top: 10px;
+
+}
+@keyframes fade-in {
+    0%{opacity: 0.0;font-size: 1px;}
+    10%{opacity: 0.1;font-size: 2px;}
+    20%{opacity: 0.2;font-size: 4px;}
+    30%{opacity: 0.3;font-size: 6px;}
+    40%{opacity: 0.4;font-size: 8px;}
+    50%{opacity: 0.5;font-size: 10px;}
+    60%{opacity: 0.6;font-size: 12px;}
+    70%{opacity: 0.7;font-size: 14px;}
+    80%{opacity: 0.8;font-size: 16px;}
+    90%{opacity: 1.0;font-size: 18px;}
+    100%{display:inline;opacity: 1.0;font-size: 20px;}
+}
+.remove{
+display: none;
+font-size:1px;
+transition-duration: 100s;
+transition-property: all;
+}
+.expand>ul>li>i>.remove{
+overflow: hidden;
+animation-name: fade-in;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
+display: inline;
+}
+li:hover{
+cursor: pointer;
+box-shadow: 5px 5px   #000;
+transform: translate(-5px,-5px);
+background-color: #292631;
+border-radius: 50px;
+border: none;
+}
+p.logo:hover{
+box-shadow: 1px 12px 2px  #000;
+cursor: pointer;
+transform: translate(0px,-3px);
+}

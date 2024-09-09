@@ -1,0 +1,60 @@
+airport:    10
+
+aid 	
+city 		 
+country 	 
+terminal
+
+class:      3
+
+classid
+type
+
+fclass:--   60  
+
+fid--       flight
+classid--   class
+cost
+
+flight:     20 
+
+fid
+fname
+no of seats
+from--      airport
+to--        airport
+terminal
+
+schedule:   
+
+sid
+dep_date
+dep_time
+arr_date
+arr_time
+fid--       flight
+
+seat:       20
+
+seatno
+aisle
+classid--   class
+
+seatschedule:--
+
+seatno--    seat
+sid--       schedule
+avail
+
+ticket:
+
+tno	 
+tdate 	 
+cost  	 
+paymentid 	 
+paymentsrc 	 
+cid--       customer  	 
+scid-- 	    schedule
+seatno--    seat
+
+tp

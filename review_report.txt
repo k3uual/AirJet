@@ -1,0 +1,34 @@
+20 feb 2023
+showed login and registration form with css styling
+
+1 feb
+showed forgot password form with css styling
+
+11mar
+showed home page with css styling
+
+15 mar
+showed ticket booking and download
+
+20 mar
+showed customer access to update his/her own data
+
+27 mar
+showed cancel flight functionality as well as search flight functionality
+
+1 apr
+showed admin access and control to search tables and update all data in all tables
+
+8 apr
+showed admin's control to insert and delete data in every table
+
+12 apr
+showed customer dashboard including logo of the website
+
+18 apr
+showed admin dashboard all it access and control with applied and finished css styling
+
+24 apr
+showed all customer access and contol with applied and finished css styling
+
+
